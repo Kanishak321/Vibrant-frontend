@@ -25,15 +25,16 @@ interface AuthState {
   registerUser: (user: Omit<User, 'id' | 'status' | 'createdAt'>) => void;
   approveUser: (id: string) => void;
   rejectUser: (id: string) => void;
-  adminLogin: () => void;
+  // adminLogin: () => void;
+  adminLogin: (userData?: User) => void;
 }
 
 const mockAdminUser: User = {
   id: 'admin-1',
   fullName: 'Super Admin',
-  email: 'admin@vibrnd.com',
+  email: 'admin@kcpl.com',
   mobile: '1234567890',
-  outletName: 'VIBRND HQ',
+  outletName: 'kcpl HQ',
   outletAddress: 'Admin HQ',
   role: 'Admin',
   status: 'Approved',
@@ -80,12 +81,18 @@ export const useAuthStore = create<AuthState>()(
             u.id === id ? { ...u, status: 'Rejected' } : u
           ),
         })),
-      adminLogin: () => {
-        set({ user: mockAdminUser, isAuthenticated: true });
+      // adminLogin: () => {
+      //   set({ user: mockAdminUser, isAuthenticated: true });
+      // },
+      adminLogin: (userData?: User) => {
+        set({
+          user: userData || mockAdminUser,
+          isAuthenticated: true,
+        });
       },
     }),
     {
-      name: 'vibrnd-auth-storage',
+      name: 'kcpl-auth-storage',
     }
   )
 );

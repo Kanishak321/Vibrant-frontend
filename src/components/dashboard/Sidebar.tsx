@@ -54,7 +54,7 @@ export function Sidebar() {
     <div className="w-64 border-r bg-card flex flex-col">
       <div className="h-16 flex items-center px-6 border-b">
         <Link href="/" className="text-xl font-bold tracking-tighter bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-          VIBRND
+          kcpl
         </Link>
       </div>
       <div className="p-4 flex-1 space-y-1">

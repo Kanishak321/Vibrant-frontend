@@ -24,9 +24,9 @@ export default function LandingPage() {
           platform. Built for modern enterprise hospitality.
         </p>
         <div className="flex items-center justify-center gap-4 pt-4">
-          <Link href="/register" className={buttonVariants({ variant: 'default', size: 'lg', className: 'h-12 px-8 text-lg' })}>
+          {/* <Link href="/register" className={buttonVariants({ variant: 'default', size: 'lg', className: 'h-12 px-8 text-lg' })}>
             Register Now
-          </Link>
+          </Link> */}
           <Link href="/login" className={buttonVariants({ variant: 'outline', size: 'lg', className: 'h-12 px-8 text-lg' })}>
             Login
           </Link>
@@ -48,7 +48,7 @@ export default function LandingPage() {
               <div className="w-3 h-3 rounded-full bg-green-500" />
             </div>
             <div className="mx-auto bg-background rounded-md px-3 py-1 text-xs text-muted-foreground flex items-center gap-2 border">
-              vibrnd.com
+              kcpl.com
             </div>
           </div>
           <div className="p-8 grid grid-cols-4 gap-6 bg-background aspect-video md:aspect-auto md:h-[600px]">
