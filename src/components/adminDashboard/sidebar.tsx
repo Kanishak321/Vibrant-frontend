@@ -158,8 +158,13 @@ export function Sidebar() {
                   onClick={async () => {
                     setIsLoggingOut(true);
                     try {
-                      const nextAuth = await import("next-auth/react");
-                      await nextAuth.signOut({ callbackUrl: '/' });
+                      localStorage.removeItem("token");
+                      localStorage.removeItem("user");
+                      
+                      const { useAuthStore } = await import("@/store/useAuthStore");
+                      useAuthStore.getState().logout();
+                      
+                      router.push('/adminLogin');
                     } catch (e) {
                       console.error(e);
                     }

@@ -78,7 +78,12 @@ export function Sidebar() {
       </div>
       <div className="p-4 border-t">
         <button
-          onClick={logout}
+          onClick={() => {
+            localStorage.removeItem("token");
+            localStorage.removeItem("user");
+            logout();
+            window.location.href = '/login';
+          }}
           className="flex w-full items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
         >
           <LogOut className="w-4 h-4" />

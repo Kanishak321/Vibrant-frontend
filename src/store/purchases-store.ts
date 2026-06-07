@@ -35,7 +35,7 @@ interface PurchasesState {
   error: string | null;
   fetchData: () => Promise<void>;
   addVendor: (vendor: Omit<Vendor, 'id'>) => Promise<void>;
-  addPurchaseOrder: (po: Omit<PurchaseOrder, 'id' | 'poNumber' | 'date' | 'status'>) => Promise<void>;
+  addPurchaseOrder: (po: Omit<PurchaseOrder, 'id' | 'poNumber' | 'date'>) => Promise<void>;
   approvePurchaseOrder: (id: string, remarks?: string) => Promise<void>;
   rejectPurchaseOrder: (id: string, remarks: string) => Promise<void>;
   deletePurchaseOrder: (id: string) => Promise<void>;
